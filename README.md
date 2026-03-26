@@ -3,7 +3,6 @@
 A Flutter package that auto scrolls to the first invalid field when form validation fails.
 
 ---
-
 ## How it works
 
 `validateAndScroll()` does three things in sequence:
@@ -12,10 +11,7 @@ A Flutter package that auto scrolls to the first invalid field when form validat
 2. **Walks the element tree** depth-first to find the first `FormFieldState` where `hasError == true`.
 3. **Calls `Scrollable.ensureVisible()`** on that element's context, scheduled after the next frame so the error text widget is already laid out before position is measured.
 
-No `InheritedWidget`, no registration, no per-field state, just a tree walk that runs once on submit.
-
 ---
-
 ## Usage
 
 ### 1. Replace `Form` with `ScrollableForm`
@@ -36,9 +32,7 @@ ScrollableForm(
 ```dart
 void _submit() {
   if (_formKey.currentState!.validateAndScroll()) {
-    // all valid — proceed
   }
-  // invalid → form shows all errors and scrolls to the first one
 }
 ```
 

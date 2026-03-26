@@ -3,15 +3,6 @@
 A Flutter package that auto scrolls to the first invalid field when form validation fails.
 
 ---
-## How it works
-
-`validateAndScroll()` does three things in sequence:
-
-1. **Calls `FormState.validate()`** — triggers every validator so all error messages appear at once.
-2. **Walks the element tree** depth-first to find the first `FormFieldState` where `hasError == true`.
-3. **Calls `Scrollable.ensureVisible()`** on that element's context, scheduled after the next frame so the error text widget is already laid out before position is measured.
-
----
 ## Usage
 
 ### 1. Replace `Form` with `ScrollableForm`
